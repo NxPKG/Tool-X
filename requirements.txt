@@ -1,5 +1,5 @@
 requests>=2.24.0
 # Dependencies of requests
-idna<3,>=2.5
+idna>=2.5,<4
 certifi>=2017.4.17
 chardet<4,>=3.0.2
