@@ -1,8 +1,11 @@
 import json
 import requests
 
+# Define the path to the data.json file
+data_file_path = 'data.json'
+
 # Load the current data.json file
-with open('data.json', 'r') as file:
+with open(data_file_path, 'r') as file:
     data = json.load(file)
 
 # Function to get the latest version from GitHub
@@ -23,5 +26,5 @@ for tool in data.values():
 
 # Save the updated data.json file if there were any updates
 if updated:
-    with open('data.json', 'w') as file:
+    with open(data_file_path, 'w') as file:
         json.dump(data, file, indent=4)
