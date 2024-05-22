@@ -89,7 +89,7 @@ class Logo:
 
     @classmethod
     def about(cls, total):
-        cls.display(f'''
+        cls.display('''
 \033[1;33m       [+] Tool Name :- \033[1;32mTool-X
 \033[1;33m       [+] Author :- \033[1;32mNx PKG
 \033[1;33m       [+] Latest Update :- \033[1;32m23/3/2019.\033[1;m
