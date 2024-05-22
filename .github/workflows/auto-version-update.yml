@@ -32,7 +32,7 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git checkout -b auto-version-update
-          git add data/data.json
+          git add core/data.json
           git commit -m "Auto update tool versions"
           git push origin auto-version-update
 
@@ -42,5 +42,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: auto-version-update
           title: "Auto update tool versions"
-          body: "This pull request was automatically created by GitHub Actions to update the tool versions in data.json."
+          body: "This pull request was automatically created by GitHub Actions to update the tool versions in core/data.json."
           labels: 'auto-update'
