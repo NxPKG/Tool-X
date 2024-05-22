@@ -3,7 +3,6 @@
 [![Build Status](https://img.shields.io/github/forks/NxPKG/Tool-X.svg)](https://github.com/NxPKG/Tool-X)
 [![Build Status](https://img.shields.io/github/stars/NxPKG/Tool-X.svg)](https://github.com/NxPKG/Tool-X)
 [![License](https://img.shields.io/github/license/NxPKG/Tool-X.svg)](https://github.com/NxPKG/Tool-X)
-[![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_flat.svg)](https://inventory.rawsec.ml/tools.html#Tool-X)
 
 ------------------------------------------------------------------------
 
