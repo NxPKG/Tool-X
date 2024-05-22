@@ -1,8 +1,6 @@
 # Tool-X
 
-[![Build Status](https://img.shields.io/github/forks/NxPKG/Tool-X.svg)](https://github.com/NxPKG/Tool-X)
-[![Build Status](https://img.shields.io/github/stars/NxPKG/Tool-X.svg)](https://github.com/NxPKG/Tool-X)
-[![License](https://img.shields.io/github/license/NxPKG/Tool-X.svg)](https://github.com/NxPKG/Tool-X)
+
 
 ------------------------------------------------------------------------
 
@@ -63,6 +61,12 @@ Enter a Number for a specific output:
 Type `Tool-X` or `toolx` from anywhere in your terminal to open Tool-X.
 
 ------------------------------------------------------------------------
+
+## Acknowledgments
+Tool-X was originally created by [rajkumardusad]. This version includes modifications and new features by [nxpkg].
+
+## License
+This project is dual-licensed under the terms of the MIT License and the GNU General Public License v3.0 (GPL-3.0). You may choose either license to govern your use of this project. See the `LICENSE` file for details.
 
 **Warning**
 
