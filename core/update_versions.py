@@ -22,9 +22,10 @@ def get_latest_version(repo_url):
 updated = False
 for tool in data.values():
     latest_version = get_latest_version(tool.get('url'))
-    if latest_version and latest_version != tool['version']:
-        tool['version'] = latest_version
-        updated = True
+    if latest_version:
+        if 'version' not in tool or latest_version != tool['version']:
+            tool['version'] = latest_version
+            updated = True
 
 # Save the updated data.json file if there were any updates
 if updated:
