@@ -6,7 +6,7 @@ class Logo:
         |_   _|__   ___ | |   \ \/ /
           | |/ _ \ / _ \| |____\  /
           | | (_) | (_) | |____/  \    
-          |_|\___/ \___/|_|   /_/\_\ \033[1;91mv2.1
+          |_|\___/ \___/|_|   /_/\_\033[1;91mv2.1
 \033[1;36m =============================================\033[1;m
 \033[1;33m|          Install Best Hacking Tool          |
 \033[1;36m =============================================\033[00m
@@ -93,4 +93,10 @@ class Logo:
 \033[1;33m       [+] Tool Name :- \033[1;32mTool-X
 \033[1;33m       [+] Author :- \033[1;32mNx PKG
 \033[1;33m       [+] Latest Update :- \033[1;32m23/3/2019.\033[1;m
-\033[1;33m       [+]
+\033[1;33m       [+] Add more information here.\033[1;m
+''')
+
+# Usage examples:
+# Logo.installation_success()
+# Logo.install_terms_and_conditions()
+# Logo.about(0)
