@@ -38,6 +38,7 @@ jobs:
           git checkout -b auto-version-update
           git add core/data.json
           git commit -m "Auto update tool versions"
+          git pull --rebase origin main # Replace 'main' with your default branch
           git push origin auto-version-update
 
       - name: Create Pull Request
