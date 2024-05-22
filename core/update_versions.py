@@ -2,7 +2,7 @@ import json
 import requests
 
 # Define the path to the data.json file
-data_file_path = 'data.json'
+data_file_path = 'core/data.json'
 
 # Load the current data.json file
 with open(data_file_path, 'r') as file:
