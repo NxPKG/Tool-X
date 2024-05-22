@@ -1184,7 +1184,7 @@
     "package_manager": "git",
     "dependency": ["git"],
     "version": "2.5"
-  }
+  },
   "Zerodoor": {
     "name": "Zerodoor",
     "package_name": "Zerodoor",
