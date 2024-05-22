@@ -223,6 +223,31 @@ class ToolX:
             else:
                 self.update_error()
 
+    def add_tools(self):
+        """
+        Allows users to add new tools.
+        """
+        os.system("clear")
+        logo.add_tools()
+        
+        # Prompt user for tool information
+        category = input("Enter category for the new tool: ")
+        repo_url = input("Enter repository URL for the new tool: ")
+        title = input("Enter title for the new tool: ")
+        description = input("Enter description for the new tool: ")
+        
+        # Update tool data JSON files
+        new_tool_data = {
+            "title": title,
+            "description": description,
+            "url": repo_url,
+            "category": category  # Assuming category is a list
+        }
+        self.tools.add_tool(new_tool_data)
+        
+        input("\nNew tool added successfully! Press Enter to continue...")
+        self.menu()
+        
     def about(self):
         """
         Displays information about Tool-X.
@@ -254,6 +279,9 @@ class ToolX:
                 break
             elif cmd == "4":
                 self.about()
+                break
+            elif cmd == "5":
+                self.add_tools()  # Option for adding new tools
                 break
             elif cmd.lower() in ("x", "exit"):
                 os.system("clear")
@@ -434,6 +462,29 @@ class Tools:
             os.system("clear")
             logo.not_installed(package_name)
             input("\033[1;36m ##> \033[00m")
+
+    def add_tool(self, new_tool_data):
+        """
+        Adds a new tool to the tool data JSON files.
+        """
+        # Append new tool data to existing data
+        self.data[new_tool_data["title"]] = {
+            "package_name": "",  # Update with relevant information if applicable
+            "package_manager": "",  # Update with relevant information if applicable
+            "url": new_tool_data["url"],
+            "dependency": [],  # Update with relevant information if applicable
+            "category": new_tool_data["category"]
+        }
+
+        # Update categories JSON file if necessary
+        if new_tool_data["category"] not in self.category_data:
+            self.category_data[new_tool_data["category"]] = new_tool_data["category"]
+
+        # Write updated data to JSON files
+        with open(self.system.conf_dir + "/Tool-X/core/data.json", "w") as data_file:
+            json.dump(self.data, data_file, indent=4)
+        with open(self.system.conf_dir + "/Tool-X/core/cat.json", "w") as cat_file:
+            json.dump(self.category_data, cat_file, indent=4)
 
 if __name__ == "__main__":
     toolx = ToolX()
