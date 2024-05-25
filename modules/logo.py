@@ -1,54 +1,3 @@
-/*
- * Tool-X
- *
- * Tool-X is dual-licensed under the terms of the MIT License and the
- * GNU General Public License v3.0 (GPL-3.0). You may choose either
- * license to govern your use of this project.
- *
- * MIT License:
- * Permission is hereby granted, free of charge, to any person obtaining a 
-copy
- * of this software and associated documentation files (the "Software"), 
-to deal
- * in the Software without restriction, including without limitation the 
-rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or 
-sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included 
-in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
-OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
-MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
-THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
-IN THE
- * SOFTWARE.
- *
- * GPL-3.0 License:
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <https://www.gnu.org/licenses/>.
- */
-
 class Logo:
     HEADER = '''
 \007
@@ -57,7 +6,7 @@ class Logo:
         |_   _|__   ___ | |   \ \/ /
           | |/ _ \ / _ \| |____\  /
           | | (_) | (_) | |____/  \    
-          |_|\___/ \___/|_|   /_/\_\ \033[1;91mv2.1
+          |_|\___/ \___/|_|   /_/\_\033[1;91mv2.1
 \033[1;36m =============================================\033[1;m
 \033[1;33m|          Install Best Hacking Tool          |
 \033[1;36m =============================================\033[00m
@@ -140,8 +89,14 @@ class Logo:
 
     @classmethod
     def about(cls, total):
-        cls.display(f'''
+        cls.display('''
 \033[1;33m       [+] Tool Name :- \033[1;32mTool-X
 \033[1;33m       [+] Author :- \033[1;32mNx PKG
 \033[1;33m       [+] Latest Update :- \033[1;32m23/3/2019.\033[1;m
-\033[1;33m       [+]
+\033[1;33m       [+] Add more information here.\033[1;m
+''')
+
+# Usage examples:
+# Logo.installation_success()
+# Logo.install_terms_and_conditions()
+# Logo.about(0)
