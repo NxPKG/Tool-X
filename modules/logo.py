@@ -1,147 +1,181 @@
-/*
- * Tool-X
- *
- * Tool-X is dual-licensed under the terms of the MIT License and the
- * GNU General Public License v3.0 (GPL-3.0). You may choose either
- * license to govern your use of this project.
- *
- * MIT License:
- * Permission is hereby granted, free of charge, to any person obtaining a 
-copy
- * of this software and associated documentation files (the "Software"), 
-to deal
- * in the Software without restriction, including without limitation the 
-rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or 
-sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included 
-in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
-OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
-MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
-THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
-IN THE
- * SOFTWARE.
- *
- * GPL-3.0 License:
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <https://www.gnu.org/licenses/>.
- */
+red="\033[1;31m"
+green="\033[1;32m"
+yellow="\033[1;33m"
+blue="\033[1;34m"
+purple="\033[1;35m"
+cyan="\033[1;36m"
+violate="\033[1;37m"
+nc="\033[00m"
 
-class Logo:
-    HEADER = '''
-\007
-\033[1;33m
+class logo:
+  @classmethod
+  def tool_header(self):
+    print(f'''\007
+
+{yellow}
          _____           _    __  __
         |_   _|__   ___ | |   \ \/ /
           | |/ _ \ / _ \| |____\  /
           | | (_) | (_) | |____/  \    
-          |_|\___/ \___/|_|   /_/\_\ \033[1;91mv2.1
-\033[1;36m =============================================\033[1;m
-\033[1;33m|          Install Best Hacking Tool          |
-\033[1;36m =============================================\033[00m
-'''
+          |_|\___/ \___/|_|   /_/\_\ {purple}v2.1
 
-    FOOTER = '''
-\033[1;36m_______________________________________________
-===============================================\033[00m
-'''
 
-    @classmethod
-    def display(cls, message: str):
-        print(cls.HEADER + message + cls.FOOTER)
+{cyan} =============================================
+{yellow}|          Install Best Hacking Tool          |
+{cyan} ============================================={nc}''')
 
-    @classmethod
-    def tool_header(cls):
-        print(cls.HEADER)
+  @classmethod
+  def tool_footer(self):
+    print(f'''{cyan}_______________________________________________
+==============================================={nc}''')
 
-    @classmethod
-    def tool_footer(cls):
-        print(cls.FOOTER)
 
-    @classmethod
-    def not_installed(cls):
-        cls.display('''
-\033[1;31m  [ + ]  \033[1;31mWe can't install Tool-X.\033[1;m
-\033[1;31m  [ + ]  \033[1;31mThere are some errors.\033[1;m
-\033[1;31m  [ + ]  \033[1;31mPlease try again after some time.\033[1;m
+  @classmethod
+  def not_ins(self):
+    self.tool_header()
+    print (f'''
+{cyan}  [ + ]  {red}We can't install Tool-X.
+{cyan}  [ + ]  {red}There are some error.
+{cyan}  [ + ]  {red}Please try again after some time!''')
+    self.tool_footer()
+
+  @classmethod
+  def ins_tnc(self):
+    self.tool_header()
+    print (f'''
+{yellow}  [ + ] {green}Use It At Your Own Risk.
+{yellow}  [ + ] {green}No Warranty.
+{yellow}  [ + ] {green}Use it legal purpose only.
+{yellow}  [ + ] {green}We are not responsible for your actions.
+{yellow}  [ + ] {green}Do not do things that are forbidden.
+
+{red} If you are installing this tool.
+ that means you are agree with all terms.''')
+    self.tool_footer()
+
+  @classmethod
+  def ins_sc(self):
+    self.tool_header()
+    print (f'''
+{yellow}    [ + ] {green}Tool-X installed successfully.
+{yellow}    [ + ] {green}To run Tool-X,
+{yellow}    [ + ] {green}Type Tool-X in your terminal.''')
+    self.tool_footer()
+
+  @classmethod
+  def update(self):
+    self.tool_header()
+    print (f'''
+{yellow}  [ 1 ] {green}Update your Tool-X.
+{yellow}  [ 0 ] {green}For Back.{nc}''')
+    self.tool_footer()
+
+  @classmethod
+  def updated(self):
+    self.tool_header()
+    print (f'''
+{yellow}      [ + ] {green}Tool-X Updated Successfully.
+{yellow}      [ + ] {green}Press Enter to continue.{nc}''')
+    self.tool_footer()
+
+  @classmethod
+  def nonet(self):
+    self.tool_header()
+    print (f'''
+{cyan}  [ + ]  {red}No network connection?
+{cyan}  [ + ]  {red}Are you offline?
+{cyan}  [ + ]  {red}Please try again after some time.{nc}''')
+    self.tool_footer()
+
+  @classmethod
+  def update_error(self):
+    self.tool_header()
+    print (f'''
+{red}  [ + ]  {red}We can't Update Tool-X.\033[1;m
+{red}  [ + ]  {red}Please try again after some time.{nc}''')
+    self.tool_footer()
+
+
+  @classmethod
+  def about(self,total):
+    self.tool_header()
+    print (f'''
+{yellow}       [+] Tool Name :- {green}Tool-X
+{yellow}       [+] Latest Update :- {green}23/3/2019.\033[1;m
+{yellow}       [+] Tools :- {green}total {total} tools.\033[1;m
+
+{yellow} [+] {green}Tool-x is automatic tool installer.
+{yellow} [+] {green}Made for termux and linux based system.
+{red} [+] Note :- Use this tool at your own risk.''')
+    self.tool_footer()
+
+
+  @classmethod
+  def install_tools(self):
+    print (f"""{yellow} =============================================
+{green}|_____________ Select your tool ______________|
+ {yellow}============================================={nc}""")
+
+  @classmethod
+  def already_installed(self,name):
+    self.tool_header()
+    print(f'''
+{yellow}  [ + ] {green}Sorry ??
+{yellow}  [ + ] {violate}'{name}'{green} is already Installed !!
 ''')
+    self.tool_footer()
 
-    @classmethod
-    def install_terms_and_conditions(cls):
-        cls.display('''
-\033[1;33m  [ + ] \033[1;32mUse It At Your Own Risk.
-\033[1;33m  [ + ] \033[1;32mNo Warranty.
-\033[1;33m  [ + ] \033[1;32mUse it for legal purposes only.
-\033[1;33m  [ + ] \033[1;32mWe are not responsible for your actions.
-\033[1;33m  [ + ] \033[1;32mDo not do things that are forbidden.
-
-\033[1;31m If you are installing this tool,
- that means you agree with all terms.
+  @classmethod
+  def installed(self,name):
+    self.tool_header()
+    print(f'''
+{yellow}  [ + ] {green}Installed Successfully !!
+{yellow}  [ + ] {violate}'{name}'{green} is Installed Successfully !!
 ''')
+    self.tool_footer()
 
-    @classmethod
-    def installation_success(cls):
-        cls.display('''
-\033[1;33m    [ + ] \033[1;32mTool-X installed successfully.
-\033[1;33m    [ + ] \033[1;32mTo run Tool-X,
-\033[1;33m    [ + ] \033[1;32mType Tool-X in your terminal.
+  @classmethod
+  def not_installed(self,name):
+    self.tool_header()
+    print(f'''
+{yellow}  [ + ] {red}Sorry ??
+{yellow}  [ + ] {violate}'{name}'{red} is not installed !!
 ''')
+    self.tool_footer()
 
-    @classmethod
-    def update(cls):
-        cls.display('''
-\033[1;33m  [ 1 ] \033[1;32mUpdate your Tool-X.
-\033[1;33m  [ 0 ] \033[1;32mFor Back.\033[00m
-''')
+  @classmethod
+  def back(self):
+    print (f"""\033[01;36m =============================================
+{yellow}|  00) Back                                   |
+ \033[01;36m============================================={nc}""")
 
-    @classmethod
-    def updated(cls):
-        cls.display('''
-\033[1;33m      [ + ] \033[1;32mTool-X Updated Successfully.
-\033[1;33m      [ + ] \033[1;32mPress Enter to continue.\033[00m
-''')
+  @classmethod
+  def updating(self):
+    print (f"""{yellow} =============================================
+{green}|______________ Updating Tool-X ______________|
+ {yellow}============================================={nc}""")
 
-    @classmethod
-    def no_network(cls):
-        cls.display('''
-\033[1;31m  [ + ]  \033[1;31mNo network connection?\033[1;m
-\033[1;31m  [ + ]  \033[1;31mAre you offline?\033[1;m
-\033[1;31m  [ + ]  \033[1;31mPlease try again after some time.\033[00m
-''')
+  @classmethod
+  def installing(self):
+    print (f"""{yellow} =============================================
+{green}|________________ Installing _________________|
+ {yellow}============================================={nc}""")
 
-    @classmethod
-    def update_error(cls):
-        cls.display('''
-\033[1;31m  [ + ]  \033[1;31mWe can't update Tool-X.\033[1;m
-\033[1;31m  [ + ]  \033[1;31mPlease try again after some time.\033[00m
-''')
+  @classmethod
+  def menu(self,total):
+    self.tool_header()
+    print (f'''
+{yellow}  [ 1 ] {green}Show all tools.{yellow} [ {purple}{total} tools{yellow} ]
+{yellow}  [ 2 ] {green}Tools Category.
+{yellow}  [ 3 ] {green}Update Tool-X.
+{yellow}  [ 4 ] {green}About Us.
+{yellow}  [ x ] {green}For Exit.''')
+    self.tool_footer()
 
-    @classmethod
-    def about(cls, total):
-        cls.display(f'''
-\033[1;33m       [+] Tool Name :- \033[1;32mTool-X
-\033[1;33m       [+] Author :- \033[1;32mNx PKG
-\033[1;33m       [+] Latest Update :- \033[1;32m23/3/2019.\033[1;m
-\033[1;33m       [+]
+  @classmethod
+  def exit(self):
+    self.tool_header()
+    print (f'''
+{yellow}         [ + ] {green}Thanks for using Tool-X
+{yellow}         [ + ] {green}Good Bye.....! ){nc}''')
+    self.tool_footer()
